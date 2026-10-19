@@ -1,6 +1,6 @@
 cask "craigs-claude-counter" do
-  version "1.5.1"
-  sha256 "ee7094a6934885f9801cb1c234cd56ac9a3c7773e8036cf96c4b589d50a2a54a"
+  version "1.6.0"
+  sha256 "9e852f1afa7c0b125176e8bc638248e0feade48008fc3333c8db9465e97213d6"
 
   url "https://github.com/CraigVG/craigs-claude-counter/releases/download/v#{version}/CraigsClaudeCounter.dmg"
   name "Craig's Claude Counter"
