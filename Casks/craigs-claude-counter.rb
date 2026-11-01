@@ -1,6 +1,18 @@
+# Homebrew cask for Craig's Claude Counter (macOS app).
+#
+# Distributed via a personal tap:
+#   brew tap CraigVG/tap
+#   brew install --cask craigs-claude-counter
+#
+# After notarizing a release, fill in `version` and `sha256` (the script prints
+# the DMG's SHA-256), upload the DMG to the matching GitHub release, and copy
+# this file into the tap repo (CraigVG/homebrew-tap) under Casks/.
+#
+# Note: the app reads usage from the local engine (the Node server in this repo).
+# Run it with `npm start` / the LaunchAgent so the app + widget show live data.
 cask "craigs-claude-counter" do
-  version "1.10.0"
-  sha256 "874deaa4c1432aa99dabcaac65c8a17ec2c2cd207be5a62aebb2f19915cad5d2"
+  version "1.11.0"
+  sha256 "38031fe79aadfa1fd4898bdae8795245b6ef596e2367ef5bdb91d34a534ce6be"
 
   url "https://github.com/CraigVG/craigs-claude-counter/releases/download/v#{version}/CraigsClaudeCounter.dmg"
   name "Craig's Claude Counter"
@@ -10,17 +22,6 @@ cask "craigs-claude-counter" do
   depends_on macos: :sonoma
 
   app "CraigsClaudeCounter.app", target: "Craig's Claude Counter.app"
-
-  caveats <<~EOS
-    Craig's Claude Counter reads usage from the local engine (the small Node
-    server in the repo). Start it so the app + widget show live data:
-
-      git clone https://github.com/CraigVG/craigs-claude-counter
-      cd craigs-claude-counter && npm start
-
-    Then add the desktop widget: right-click the desktop > Edit Widgets >
-    search "Claude Counter".
-  EOS
 
   zap trash: [
     "~/Library/LaunchAgents/com.craigvg.craigs-claude-counter.plist",
